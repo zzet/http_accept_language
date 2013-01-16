@@ -1,5 +1,5 @@
 module HttpAcceptLanguage
-  class Railtie < ::Rails::Railtie
+  class Railtie < Rails::Railtie
 
     initializer "http_accept_language.add_middleware" do |app|
       app.middleware.use Middleware
@@ -13,7 +13,7 @@ module HttpAcceptLanguage
 
   module EasyAccess
     def http_accept_language
-      env.http_accept_language
+      @http_accept_language ||= env.respond_to?(:http_accept_language) ? env.http_accept_language : Parser.new("")
     end
   end
 
