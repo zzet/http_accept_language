@@ -93,7 +93,16 @@ Add the gem to your Gemfile:
 ``` ruby
 gem 'http_accept_language'
 ```
+###Important
 
+Until the adoption of important pull requests into the mainstream - it is better to use it gem as: 
+``` ruby
+gem 'http_accept_language', :git => 'git://github.com/kaize/http_accept_language.git'
+```
+or
+``` ruby
+gem 'http_accept_language', :github => 'kaize/http_accept_language'
+```
 Run `bundle install` to install it.
 
 ---
